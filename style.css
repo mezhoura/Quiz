@@ -1,0 +1,625 @@
+/* =====================================================
+   QUIZ INFORMATIQUE - STYLE Y2K / 2000s COMPUTER
+   ===================================================== */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* ---------- BUREAU ---------- */
+
+.desktop {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.45) 0 3px, transparent 4px),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.35) 0 2px, transparent 3px),
+        #f5b6d2;
+
+    background-size: 80px 80px;
+
+    overflow: hidden;
+}
+
+
+/* ---------- PETITES DECORATIONS ---------- */
+
+.desktop-decoration {
+    position: absolute;
+    color: white;
+    font-size: 60px;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.decoration-one {
+    top: 8%;
+    left: 8%;
+    transform: rotate(-15deg);
+}
+
+.decoration-two {
+    bottom: 10%;
+    right: 8%;
+    transform: rotate(15deg);
+}
+
+.decoration-three {
+    top: 18%;
+    right: 12%;
+    font-size: 40px;
+}
+
+
+/* ---------- FENÊTRE ---------- */
+
+.computer-window {
+    width: min(900px, 95vw);
+
+    background: #f5f0ff;
+
+    border: 4px solid #111;
+
+    box-shadow:
+        10px 10px 0 #111,
+        18px 18px 0 rgba(0, 0, 0, 0.15);
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ---------- BARRE DU HAUT ---------- */
+
+.window-header {
+    height: 65px;
+
+    background: #c7b1f4;
+
+    border-bottom: 4px solid #111;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 18px;
+}
+
+.window-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.window-icon {
+    font-size: 25px;
+}
+
+
+/* ---------- BOUTONS FENÊTRE ---------- */
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.window-btn {
+    width: 35px;
+    height: 30px;
+
+    border: 3px solid #111;
+    background: #eee4ff;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    line-height: 20px;
+}
+
+.window-btn:hover {
+    background: #ffffff;
+}
+
+.window-btn:active {
+    transform: translate(2px, 2px);
+}
+
+
+/* ---------- CONTENU ---------- */
+
+.window-content {
+    background: #fff;
+    min-height: 620px;
+}
+
+.screen {
+    padding: 50px 60px;
+    text-align: center;
+}
+
+
+/* ---------- ACCUEIL ---------- */
+
+.welcome-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.eyebrow {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    color: #7651b8;
+
+    margin-bottom: 18px;
+}
+
+.welcome-screen h1 {
+    font-size: clamp(32px, 5vw, 55px);
+    line-height: 1.05;
+
+    max-width: 700px;
+    margin: auto;
+}
+
+.welcome-screen h1 span {
+    color: #8d63dc;
+}
+
+.description {
+    max-width: 550px;
+
+    margin: 25px auto;
+
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.welcome-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    color: #9b77df;
+
+    font-size: 28px;
+
+    margin: 20px 0;
+}
+
+
+/* ---------- BOUTON PRINCIPAL ---------- */
+
+.main-btn {
+    display: inline-block;
+
+    border: 4px solid #111;
+
+    background: #a98bea;
+
+    box-shadow: 5px 5px 0 #111;
+
+    padding: 15px 28px;
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.1s;
+}
+
+.main-btn:hover {
+    background: #bba4f3;
+}
+
+.main-btn:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 #111;
+}
+
+.small-text {
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    color: #777;
+}
+
+
+/* ---------- QUIZ ---------- */
+
+.quiz-screen {
+    text-align: left;
+}
+
+.quiz-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: #e2d5ff;
+
+    border: 2px solid #111;
+
+    padding: 7px 12px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#question-counter {
+    font-weight: bold;
+}
+
+
+/* ---------- PROGRESSION ---------- */
+
+.progress-container {
+    width: 100%;
+    height: 20px;
+
+    border: 3px solid #111;
+
+    background: white;
+
+    margin-bottom: 35px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+
+    background: #a98bea;
+
+    transition: width 0.3s ease;
+}
+
+
+/* ---------- QUESTION ---------- */
+
+.question-decoration {
+    color: #8b64ca;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+#question-title {
+    font-size: clamp(25px, 4vw, 38px);
+
+    line-height: 1.2;
+
+    margin-bottom: 10px;
+}
+
+#question-description {
+    color: #666;
+
+    margin-bottom: 25px;
+}
+
+
+/* ---------- RÉPONSES ---------- */
+
+.answers-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.answer-btn {
+    min-height: 75px;
+
+    border: 3px solid #111;
+
+    background: #d7c7ff;
+
+    box-shadow: 4px 4px 0 #111;
+
+    padding: 15px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.1s;
+}
+
+.answer-btn:hover {
+    background: #bca4f3;
+}
+
+.answer-btn:active {
+    transform: translate(4px, 4px);
+
+    box-shadow: none;
+}
+
+.answer-number {
+    display: inline-flex;
+
+    width: 28px;
+    height: 28px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border: 2px solid #111;
+
+    margin-right: 8px;
+}
+
+
+/* ---------- FOOTER QUIZ ---------- */
+
+.quiz-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 35px;
+}
+
+.secondary-btn {
+    border: 3px solid #111;
+
+    background: white;
+
+    padding: 10px 18px;
+
+    font-family: inherit;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background: #eee4ff;
+}
+
+.secondary-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.footer-decoration {
+    color: #777;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+
+/* ---------- RESULTAT ---------- */
+
+.result-screen {
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.result-screen h2 {
+    font-size: 34px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ---------- CARTE RESULTAT ---------- */
+
+.result-card {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    padding: 30px;
+
+    background: #e3d7ff;
+
+    border: 4px solid #111;
+
+    box-shadow: 7px 7px 0 #111;
+}
+
+.result-label {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.result-emoji {
+    font-size: 55px;
+
+    margin: 15px 0;
+}
+
+.result-card h3 {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+
+    color: #7651b8;
+}
+
+.result-card p {
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* ---------- AUTRES DOMAINES ---------- */
+
+.other-domains {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+}
+
+.other-domains h3 {
+    font-size: 16px;
+
+    margin-bottom: 15px;
+}
+
+#other-results {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.other-result {
+    border: 2px solid #111;
+
+    background: white;
+
+    padding: 8px 12px;
+
+    font-size: 13px;
+}
+
+
+/* ---------- FOOTER FENÊTRE ---------- */
+
+.window-footer {
+    height: 38px;
+
+    border-top: 4px solid #111;
+
+    background: #d8c9f7;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 12px;
+
+    font-size: 12px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #58b957;
+
+    border: 1px solid #111;
+}
+
+.footer-version {
+    margin-left: auto;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 650px) {
+
+    .desktop {
+        padding: 15px;
+    }
+
+    .computer-window {
+        width: 100%;
+    }
+
+    .screen {
+        padding: 35px 20px;
+    }
+
+    .window-header {
+        height: 55px;
+    }
+
+    .window-title {
+        font-size: 14px;
+    }
+
+    .answers-container {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-top {
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quiz-footer {
+        gap: 15px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .footer-decoration {
+        text-align: center;
+    }
+}
+
+
+/* ---------- CACHER LES ÉCRANS ---------- */
+
+[hidden] {
+    display: none !important;
+}
+
+
+#progress-bar {
+    transition: width 0.5s ease;
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quel domaine de l'informatique te correspond ?</title>
+
+    <!-- Feuille de style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Fond du site -->
+    <div class="background">
+
+        <!-- Fenêtre principale -->
+        <main class="window">
+
+            <!-- Barre supérieure de la fenêtre -->
+            <header class="window-header">
+
+                <div class="window-title">
+                    💻 QUIZ INFORMATIQUE
+                </div>
+
+                <div class="window-buttons">
+                    <button class="window-button">−</button>
+                    <button class="window-button">□</button>
+                    <button class="window-button close">×</button>
+                </div>
+
+            </header>
+
+
+            <!-- Contenu principal -->
+            <section class="window-content">
+
+                <!-- ========================= -->
+                <!-- ÉCRAN D'ACCUEIL -->
+                <!-- ========================= -->
+
+                <div id="home-screen" class="screen">
+
+                    <div class="computer-icon">
+                        💻
+                    </div>
+
+                    <h1>
+                        Quel domaine de<br>
+                        l'informatique te correspond ?
+                    </h1>
+
+                    <p class="intro">
+                        Découvre quel domaine de l'informatique
+                        correspond le mieux à ta personnalité,
+                        tes goûts et ta façon de réfléchir.
+                    </p>
+
+                    <div class="quiz-info">
+                        <span>10 questions</span>
+                        <span>⏱Quelques minutes</span>
+                        <span>Résultat personnalisé</span>
+                    </div>
+
+                    <button id="start-btn" class="main-btn">
+    Commencer le quiz →
+</button>
+
+                
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- ÉCRAN DU QUIZ -->
+                <!-- ========================= -->
+
+                <div id="quiz-screen" class="screen hidden">
+
+                    <!-- Informations de progression -->
+                    <div class="quiz-top">
+
+                        <span id="question-number">
+                            Question 1 / 10
+                        </span>
+
+                        <span id="score-display">
+                            💾 Quiz en cours...
+                        </span>
+
+                    </div>
+
+
+                    <!-- Barre de progression -->
+                    <div class="progress-container">
+                        <div id="progress-bar"></div>
+                    </div>
+
+
+                    <!-- Question -->
+                    <div class="question-box">
+
+                        <h2 id="question-text">
+                            Question ici...
+                        </h2>
+
+                    </div>
+
+
+                    <!-- Réponses -->
+                    <div id="answers-container" class="answers-container">
+
+                        <!-- JavaScript ajoutera les réponses ici -->
+
+                    </div>
+
+
+                    <!-- Navigation -->
+                    <div class="quiz-navigation">
+
+                        <button
+                            id="previous-button"
+                            class="secondary-button"
+                            disabled
+                        >
+                            ◀ RETOUR
+                        </button>
+
+                        <button
+                            id="next-button"
+                            class="main-button"
+                            disabled
+                        >
+                            SUIVANT ▶
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- ÉCRAN DE CHARGEMENT -->
+                <!-- ========================= -->
+
+                <div id="loading-screen" class="screen hidden">
+
+                    <div class="loading-icon">
+                        💾
+                    </div>
+
+                    <h2>
+                        Analyse de tes réponses...
+                    </h2>
+
+                    <p>
+                        Calcul de ton profil informatique
+                    </p>
+
+                    <div class="loading-bar-container">
+                        <div id="loading-bar"></div>
+                    </div>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- ÉCRAN DU RÉSULTAT -->
+                <!-- ========================= -->
+
+                <div id="result-screen" class="screen hidden">
+
+                    <div class="result-header">
+                        ⭐ RÉSULTAT DU QUIZ ⭐
+                    </div>
+
+                    <div class="result-icon" id="result-icon">
+                        💻
+                    </div>
+
+                    <p class="result-label">
+                        Ton domaine principal :
+                    </p>
+
+                    <h2 id="result-title">
+                        Développement
+                    </h2>
+
+                    <div class="result-description">
+                        <p id="result-description">
+                            Tu sembles particulièrement attiré par
+                            la création, la logique et la résolution
+                            de problèmes.
+                        </p>
+                    </div>
+
+
+                    <!-- Scores -->
+                    <div class="scores-box">
+
+                        <h3>
+                            📊 Ton profil
+                        </h3>
+
+                        <div class="score-row">
+                            <span>💻 Développement</span>
+                            <span id="development-score">0</span>
+                        </div>
+
+                        <div class="score-row">
+                            <span>🤖 Intelligence artificielle</span>
+                            <span id="ai-score">0</span>
+                        </div>
+
+                        <div class="score-row">
+                            <span>🔐 Cybersécurité</span>
+                            <span id="cybersecurity-score">0</span>
+                        </div>
+
+                        <div class="score-row">
+                            <span>🌐 Réseaux / systèmes</span>
+                            <span id="network-score">0</span>
+                        </div>
+
+                        <div class="score-row">
+                            <span>📊 Data</span>
+                            <span id="data-score">0</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Recommencer -->
+                    <button
+                        id="restart-button"
+                        class="main-button"
+                    >
+                        🔄 REFAIRE LE QUIZ
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Barre inférieure -->
+            <footer class="window-footer">
+
+                <span>
+                    Quiz-Informatique
+                </span>
+
+                <span>
+                    .
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+<script src="java/script.js" defer></script>
+
+</body>
+</html>
