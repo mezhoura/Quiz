@@ -3,252 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Quel domaine de l'informatique te correspond ?</title>
-
+    <title>Orientation Tech - Quelle spécialité est faite pour toi ?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="background">
-        <main class="window">
+    <!-- Arrière-plan dynamique et bulles lumineuses -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
 
+    <div class="app-wrapper">
+        <main class="quiz-card">
+
+            <!-- En-tête avec emplacement pour le logo de ton club -->
             <header class="window-header">
-
-                <div class="window-title">
-                    💻 QUIZ INFORMATIQUE
+                <div class="club-brand">             
+                    <img src="logo csi.jpg" alt="Logo Club" class="club-logo" id="club-logo-img">
+                    <!-- ======================================================= -->
+                    <span class="club-name">CLUB SCIENTIFIQUE D'INFORMATIQUE</span>
                 </div>
 
-                <div class="window-buttons">
-                    <button class="window-button">−</button>
-                    <button class="window-button">□</button>
-                    <button class="window-button close">×</button>
+                <div class="window-decor-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
-
             </header>
 
-            <section class="window-content">
+            <section class="card-content">
 
-              
-
+                <!-- ÉCRAN D'ACCUEIL -->
                 <div id="home-screen" class="screen">
-
-                    <div class="computer-icon">
-                        💻
+                    <div class="club-badge-container">
+                        <!-- Emplacement secondaire pour mettre en avant la photo/logo du club -->
+                        <div class="club-avatar-frame">
+                            <!-- REMPLACE ÉGALEMENT CE CHEMIN PAR LE LOGO OU PHOTO DU CLUB -->
+                            <img src="logo csi.jpg" alt="Badge Club" class="club-hero-photo">
+                        </div>
                     </div>
 
-                    <h1>
-                        Quel domaine de<br>
-                        l'informatique te correspond ?
-                    </h1>
-
+                    <span class="badge-tag">ORIENTATION SPÉCIALITÉS IT</span>
+                    <h1>Trouve la <span class="gradient-text">spécialité informatique</span> qui te correspond</h1>
+                    
                     <p class="intro">
-                        Découvre quel domaine de l'informatique
-                        correspond le mieux à ta personnalité,
-                        tes goûts et ta façon de réfléchir.
+                        Réponds à 20 questions de réflexion et de mise en situation concrète pour déterminer ton profil dominant parmi les branches majeures de l'informatique.
                     </p>
 
-                    <div class="quiz-info">
-                        <span>10 questions</span>
-                        <span>⏱Quelques minutes</span>
-                        <span>Résultat personnalisé</span>
+                    <div class="quiz-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🎯</span>
+                            <span>20 Questions ciblées</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">⚡</span>
+                            <span>5 Spécialités analysées</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📊</span>
+                            <span>Bilan complet instantané</span>
+                        </div>
                     </div>
 
-                    <button id="start-btn" class="main-btn">
-    Commencer le quiz →
-</button>
-
-                
-
+                    <button id="start-btn" class="btn btn-primary pulse-effect">
+                        <span>Lancer le questionnaire</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
                 </div>
 
 
-               
-
+                <!-- ÉCRAN DU QUESTIONNAIRE -->
                 <div id="quiz-screen" class="screen hidden">
-
                     
-                    <div class="quiz-top">
-
-                        <span id="question-number">
-                            Question 1 / 10
-                        </span>
-
-                        <span id="score-display">
-                            💾 Quiz en cours...
-                        </span>
-
+                    <div class="quiz-header-bar">
+                        <span id="question-number" class="step-badge">Question 1 / 20</span>
+                        <div class="progress-track">
+                            <div id="progress-bar" class="progress-fill"></div>
+                        </div>
                     </div>
 
-
-                    
-                    <div class="progress-container">
-                        <div id="progress-bar"></div>
+                    <div class="question-header">
+                        <span id="question-tag" class="category-tag">Mise en situation</span>
+                        <h2 id="question-text">Chargement de la question...</h2>
                     </div>
 
-
-                    
-                    <div class="question-box">
-
-                        <h2 id="question-text">
-                            Question ici...
-                        </h2>
-
+                    <div id="answers-container" class="answers-grid">
+                        <!-- Boutons injectés dynamiquement par script.js -->
                     </div>
 
-
-                    
-                    <div id="answers-container" class="answers-container">
-
-                        <!-- JavaScript ajoutera les réponses ici -->
-
-                    </div>
-
-
-                    
                     <div class="quiz-navigation">
-
-                        <button
-                            id="previous-button"
-                            class="secondary-button"
-                            disabled
-                        >
-                            ◀ RETOUR
+                        <button id="previous-button" class="btn btn-secondary" disabled>
+                            ← Question précédente
                         </button>
-
-                        <button
-                            id="next-button"
-                            class="main-button"
-                            disabled
-                        >
-                            SUIVANT ▶
+                        <button id="next-button" class="btn btn-primary" disabled>
+                            Continuer →
                         </button>
-
                     </div>
 
                 </div>
 
 
-               
-
+                <!-- ÉCRAN DE CHARGEMENT -->
                 <div id="loading-screen" class="screen hidden">
-
-                    <div class="loading-icon">
-                        💾
+                    <div class="loader-spinner"></div>
+                    <h2>Analyse en cours...</h2>
+                    <p>Nos algorithmes calculent vos affinités par spécialité</p>
+                    <div class="loading-track">
+                        <div id="loading-bar" class="loading-fill"></div>
                     </div>
-
-                    <h2>
-                        Analyse de tes réponses...
-                    </h2>
-
-                    <p>
-                        Calcul de ton profil informatique
-                    </p>
-
-                    <div class="loading-bar-container">
-                        <div id="loading-bar"></div>
-                    </div>
-
                 </div>
 
 
-               
-
+                <!-- ÉCRAN DES RÉSULTATS -->
                 <div id="result-screen" class="screen hidden">
-
-                    <div class="result-header">
-                        ⭐ RÉSULTAT DU QUIZ ⭐
-                    </div>
-
-                    <div class="result-icon" id="result-icon">
-                        💻
-                    </div>
-
-                    <p class="result-label">
-                        Ton domaine principal :
-                    </p>
-
-                    <h2 id="result-title">
-                        Développement
-                    </h2>
-
-                    <div class="result-description">
-                        <p id="result-description">
-                            Tu sembles particulièrement attiré par
-                            la création, la logique et la résolution
-                            de problèmes.
+                    <span class="badge-tag">RÉSULTAT D'ANALYSE</span>
+                    
+                    <div class="result-hero">
+                        <div class="result-icon-glow" id="result-icon">💻</div>
+                        <h2 id="result-title" class="result-title">Développement Logiciel & Web</h2>
+                        <p id="result-description" class="result-description">
+                            Description du domaine adapté.
                         </p>
                     </div>
 
-
-                    
-                    <div class="scores-box">
-
-                        <h3>
-                            📊 Ton profil
-                        </h3>
-
-                        <div class="score-row">
-                            <span>💻 Développement</span>
-                            <span id="development-score">0</span>
+                    <div class="results-breakdown">
+                        <h3>Détails de tes affinités :</h3>
+                        <div class="score-bars">
+                            <div class="score-row">
+                                <div class="row-info">
+                                    <span>💻 Dév Web & Logiciel</span>
+                                    <span id="development-score" class="score-val">0%</span>
+                                </div>
+                                <div class="mini-bar"><div class="mini-fill" id="bar-dev"></div></div>
+                            </div>
+                            <div class="score-row">
+                                <div class="row-info">
+                                    <span>🤖 Intelligence Artificielle</span>
+                                    <span id="ai-score" class="score-val">0%</span>
+                                </div>
+                                <div class="mini-bar"><div class="mini-fill" id="bar-ai"></div></div>
+                            </div>
+                            <div class="score-row">
+                                <div class="row-info">
+                                    <span>🔐 Cybersécurité</span>
+                                    <span id="cybersecurity-score" class="score-val">0%</span>
+                                </div>
+                                <div class="mini-bar"><div class="mini-fill" id="bar-cyber"></div></div>
+                            </div>
+                            <div class="score-row">
+                                <div class="row-info">
+                                    <span>🌐 Réseaux, Systèmes & Cloud</span>
+                                    <span id="network-score" class="score-val">0%</span>
+                                </div>
+                                <div class="mini-bar"><div class="mini-fill" id="bar-network"></div></div>
+                            </div>
+                            <div class="score-row">
+                                <div class="row-info">
+                                    <span>📊 Big Data & Analytics</span>
+                                    <span id="data-score" class="score-val">0%</span>
+                                </div>
+                                <div class="mini-bar"><div class="mini-fill" id="bar-data"></div></div>
+                            </div>
                         </div>
-
-                        <div class="score-row">
-                            <span>🤖 Intelligence artificielle</span>
-                            <span id="ai-score">0</span>
-                        </div>
-
-                        <div class="score-row">
-                            <span>🔐 Cybersécurité</span>
-                            <span id="cybersecurity-score">0</span>
-                        </div>
-
-                        <div class="score-row">
-                            <span>🌐 Réseaux / systèmes</span>
-                            <span id="network-score">0</span>
-                        </div>
-
-                        <div class="score-row">
-                            <span>📊 Data</span>
-                            <span id="data-score">0</span>
-                        </div>
-
                     </div>
 
-
-                    <!-- Recommencer -->
-                    <button
-                        id="restart-button"
-                        class="main-button"
-                    >
-                        🔄 REFAIRE LE QUIZ
+                    <button id="restart-button" class="btn btn-primary">
+                        <span>🔄 Recommencer le test</span>
                     </button>
-
                 </div>
 
             </section>
 
-
-            
-            <footer class="window-footer">
-
-                <span>
-                    Quiz-Informatique
-                </span>
-
-                <span>
-                    .
-                </span>
-
+            <footer class="card-footer">
+                <span>Quiz d'orientation • Développé pour les passionnés d'informatique</span>
             </footer>
 
         </main>
-
     </div>
 
-
-<script src="script.js" defer></script>
-
+    <script src="script.js" defer></script>
 </body>
 </html>
